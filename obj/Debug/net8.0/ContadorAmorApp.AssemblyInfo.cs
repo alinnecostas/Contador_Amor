@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ContadorAmorApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3320fb675e871b4894a91593a39084f4b8dacf5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ContadorAmorApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ContadorAmorApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
