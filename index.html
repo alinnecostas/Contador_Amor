@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Contador de Amor ❤️</title>
+    <style>
+        :root {
+            --vermelho-principal: #d32f2f;
+            --vermelho-claro: #ffcdd2;
+            --vermelho-escuro: #b71c1c;
+            --branco: #ffffff;
+            --preto: #212121;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('imagem2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--preto);
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.7);  
+            backdrop-filter: blur(3px);
+            border-radius: 16px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            color: var(--vermelho-escuro);
+            font-size: 2rem;
+            margin: 10px 0;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--preto);
+            margin-bottom: 25px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .counter-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .counter-title {
+            font-size: 1.1rem;
+            color: var(--preto);
+            margin-bottom: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .counter {
+            font-size: 1.3rem;
+            color: var(--vermelho-escuro);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .music-player {
+            width: 100%;
+            max-width: 280px;
+            margin: 20px auto;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--vermelho-claro);
+        }
+
+        .music-label {
+            font-size: 0.9rem;
+            color: var(--preto);
+            margin-top: -15px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .heart {
+            font-size: 1.8rem;
+            color: var(--vermelho-principal);
+            margin-top: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(211, 47, 47, 0.3), transparent);
+            margin: 20px auto;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="AA_header.png" class="logo" alt="Alan e Alinne">
+
+        <h1>Calculando o incalculável</h1>
+        <p class="subtitle">Um contador para o nosso amor, que não tem fim!</p>
+
+        <!-- Player de música -->
+        <audio class="music-player" controls>
+            <source src="MusicaAmor.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <p class="music-label"> Feliz nosso dia! </p>
+
+        <hr>
+
+        <div class="counter-container">
+            <div class="counter-title">EU TE AMO HÁ:</div>
+            <div class="counter" id="counter">
+                Calculando...
+            </div>
+        </div>
+
+        <div class="heart">❤️</div>
+    </div>
+
+    <script>
+        // ⚠️ ALTERE AQUI PARA SUA DATA ESPECIAL!
+        const startDate = new Date('2022-06-12');
+
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((diff / (1000 * 60 * 60 * 24 * 30)) % 12);
+            const days = Math.floor((diff / (1000 * 60 * 60 * 24)) % 365);
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('counter').innerHTML =
+                `${years} anos, ${months} meses,<br>
+                     ${days} dias, ${hours} horas,<br>
+                     ${minutes} minutos e ${seconds} segundos.`;
+        }
+
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+</body>
+</html>
